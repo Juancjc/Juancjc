@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">-✨ Criando Bugs desde 2016<br>-📚Estou Estudando laravel , FrontEnd e ReactNative<br>-👨‍💻 Trabalhando para a secretária CAR-PRA-CIGMA da SEMAPI-AC</p>
+<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , FrontEnd e ReactNative<br>👨‍💻 Trabalhando para a secretária CAR-PRA-CIGMA da SEMAPI-AC</p>
 
 ###
 
@@ -43,7 +43,7 @@
 ###
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+  <img href="https://www.linkedin.com/in/juan-carlos-justiniano-coelho-920953192/" src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="52" height="40" alt="gmail logo"  />
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"  />
 </div>
