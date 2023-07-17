@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , FrontEnd e ReactNative<br>👨‍💻 Trabalhando para a secretária CAR-PRA-CIGMA da SEMAPI-AC</p>
+<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , FrontEnd e ReactNative<br>⚫👨‍💻 Trabalhando para a secretária CAR-PRA-CIGMA da SEMAPI-AC</p>
 
 ###
 
