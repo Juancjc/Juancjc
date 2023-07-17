@@ -57,6 +57,6 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/Juancjc/Juancjc/output/snake.svg" alt="Snake animation" />
+![Snake animation](https://github.com/Juancjc/Juancjc/blob/output/github-contribution-grid-snake.svg)
 
 ###
