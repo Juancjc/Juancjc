@@ -39,7 +39,7 @@
   <img width="12" />
   <img src="https://cdn.simpleicons.org/postgresql/4169E1" height="40" alt="postgresql logo"  />
   <img width="12" />
-  <img src="https://cdn.simpleicons.org/postgresql/4169E1" height="40" alt="vuejs logo"  />
+  <img src="https://cdn.simpleicons.org/vuejs/4169E1](https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png)https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png" height="40" alt="vuejs logo"  />
 </div>
 
 
