@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , Alpine.js, VUE.js e Flutter<br>⚫👨‍💻 Trabalhando mas sempre em busca de oportunidades</p>
+<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , Alpine.js, VUE.js, Flutter e React Native <br>⚫👨‍💻 Trabalhando mas sempre em busca de oportunidades</p>
 
 ###
 
