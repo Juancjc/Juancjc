@@ -1,6 +1,0 @@
-# Este arquivo esta fora do lugar (workflows do GitHub Actions ficam em .github/workflows/).
-# O conteudo foi consolidado em .github/workflows/main.yml.
-#
-# Para remover de vez:
-#   git rm snake.yml
-#   git commit -m "chore: remove snake.yml duplicado da raiz"
