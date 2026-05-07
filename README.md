@@ -1,118 +1,75 @@
-# Regra do botão "Novo DAE"
+<h1 align="center">Olá, me chamo Juan 👋</h1>
 
-Este componente exibe o botão **Novo DAE** quando o DAE atual está vencido e ainda pode ser regerado.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=64FFDA&center=true&vCenter=true&width=435&lines=Criando+bugs+desde+2016+%F0%9F%90%9B;Full+Stack+Developer;Mobile+Dev+%7C+Flutter+%26+React+Native;Sempre+em+busca+de+oportunidades" alt="Typing SVG" />
+</p>
 
-## Condições para exibir o botão
+---
 
-O botão **Novo DAE** aparece somente quando todas as condições abaixo forem verdadeiras:
+### 🧑‍💻 Sobre mim
 
-- O item possui `id`;
-- O item possui `validade_dae`;
-- O tipo do arremate é permitido:
-  - `Entrada`
-  - `Taxa Administrativa`
-  - `Arremate`
-  - `Comissao`
-  - `Comissão`
-- O `status_id` é `18`;
-- A data de validade do DAE já venceu;
-- O campo `novo_dae_gerado` é falso.
+- 🔭 Trabalhando em projetos web e mobile
+- 📚 Estudando **Laravel**, **Alpine.js**, **Vue.js**, **Flutter** e **React Native**
+- 🌐 Portfólio: **[juancjc.com.br](https://juancjc.com.br)**
+- 💼 Sempre em busca de novas oportunidades
+- ⚡ Fun fact: Meu código funciona perfeitamente... na minha máquina
 
-## Código principal
+---
 
-```js
-const STATUS_PAGO_ID = 17
-const STATUS_AGUARDANDO_ID = 18
+### 🚀 Tecnologias & Ferramentas
 
-function normalizarTexto(valor) {
-  return String(valor ?? "")
-    .trim()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-}
+<div align="center">
 
-const tiposPermitemNovoDae = [
-  "entrada",
-  "taxa administrativa",
-  "arremate",
-  "comissao",
-]
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=black)
+![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Flutter](https://img.shields.io/badge/Flutter-54C5F8?style=for-the-badge&logo=flutter&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
 
-const novoDaeJaGerado = computed(() => {
-  return (
-    props.item?.novo_dae_gerado === true ||
-    props.item?.novo_dae_gerado === 1 ||
-    props.item?.novo_dae_gerado === "1" ||
-    props.item?.novo_dae_gerado === "true"
-  )
-})
+</div>
 
-const daeVencido = computed(() => {
-  if (!props.item?.validade_dae) return false
+---
 
-  const validade = dayjs(props.item.validade_dae)
+### 📊 GitHub Stats
 
-  return validade.isValid() && validade.isBefore(dayjs(), "day")
-})
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Juancjc&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Juancjc&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
+</div>
 
-const podeGerarNovoDae = computed(() => {
-  const item = props.item
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Juancjc&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+</div>
 
-  if (!item?.id) return false
-  if (!item?.validade_dae) return false
+---
 
-  const tipo = normalizarTexto(item.tipo_arremate)
-  const statusId = Number(item.status_id)
+### 🏆 Troféus
 
-  return (
-    tiposPermitemNovoDae.includes(tipo) &&
-    statusId === STATUS_AGUARDANDO_ID &&
-    daeVencido.value &&
-    !novoDaeJaGerado.value
-  )
-})
-```
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Juancjc&theme=tokyonight&no-frame=true&row=1&column=6" alt="Trophies"/>
+</div>
 
-## Botão no template
+---
 
-```vue
-<button
-  v-if="podeGerarNovoDae"
-  type="button"
-  class="btn btn-warning btn-sm px-2 py-1 botao-acao"
-  :disabled="gerandoNovoDae"
-  @click="gerarNovoDae"
->
-  <i
-    v-if="!gerandoNovoDae"
-    class="far fa-file-invoice-dollar small pe-1"
-  ></i>
+### 🌐 Onde me encontrar
 
-  <i
-    v-else
-    class="fa-solid fa-spinner fa-spin small pe-1"
-  ></i>
+<div align="center">
 
-  <span class="small">Novo DAE</span>
-</button>
-```
+[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-juancjc.com.br-64FFDA?style=for-the-badge&logo=vercel&logoColor=white)](https://juancjc.com.br)
+[![GitHub](https://img.shields.io/badge/GitHub-Juancjc-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Juancjc)
 
-## Exemplo de item que deve exibir o botão
+</div>
 
-```json
-{
-  "id": 71,
-  "status_id": 18,
-  "tipo_arremate": "Taxa Administrativa",
-  "validade_dae": "2026-03-07T05:00:00.000000Z",
-  "novo_dae_gerado": false
-}
-```
+---
 
-Neste exemplo, o botão aparece porque:
-
-- O status é `18`;
-- O tipo é `Taxa Administrativa`;
-- O DAE está vencido;
-- Ainda não foi gerado um novo DAE.
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=Juancjc&color=64FFDA&style=flat-square&label=Visitas+no+perfil" alt="Profile views"/>
+</div>
