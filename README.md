@@ -1,7 +1,7 @@
 <h1 align="center">Olá, me chamo Juan 👋</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=64FFDA&center=true&vCenter=true&width=435&lines=Criando+bugs+desde+2016+%F0%9F%90%9B;Full+Stack+Developer;Mobile+Dev+%7C+Flutter+%26+React+Native;Sempre+em+busca+de+oportunidades" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=64FFDA&center=true&vCenter=true&width=435&lines=Criando+bugs+desde+2016+%F0%9F%90%9B;Full+Stack+Developer;Mobile+Dev+%7C+Flutter;Sempre+em+busca+de+oportunidades" alt="Typing SVG" />
 </p>
 
 ---
@@ -16,24 +16,10 @@
 
 ---
 
-### 🚀 Tecnologias & Ferramentas
+### 🛠️ Minhas Skills
 
 <div align="center">
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white)
-![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=black)
-![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Flutter](https://img.shields.io/badge/Flutter-54C5F8?style=for-the-badge&logo=flutter&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
-
+  <img src="https://skillicons.dev/icons?i=flutter,ts,laravel,php,nodejs,vue,postgres,mysql,git&perline=9&theme=dark" alt="Skills" />
 </div>
 
 ---
@@ -51,10 +37,14 @@
 
 ---
 
-### 🏆 Troféus
+### 🐍 Minhas contribuições
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Juancjc&theme=tokyonight&no-frame=true&row=1&column=6" alt="Trophies"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Juancjc/Juancjc/output/github-contribution-grid-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Juancjc/Juancjc/output/github-contribution-grid-snake.svg"/>
+    <img alt="Snake animation" src="https://raw.githubusercontent.com/Juancjc/Juancjc/output/github-contribution-grid-snake.svg"/>
+  </picture>
 </div>
 
 ---
