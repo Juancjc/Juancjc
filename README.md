@@ -1,47 +1,118 @@
-<h1 align="left">Olá 👋, me chamo Juan</h1>
+# Regra do botão "Novo DAE"
 
-###
+Este componente exibe o botão **Novo DAE** quando o DAE atual está vencido e ainda pode ser regerado.
 
-<p align="left"></p>
+## Condições para exibir o botão
 
-###
+O botão **Novo DAE** aparece somente quando todas as condições abaixo forem verdadeiras:
 
-<h2 align="left">Sobre mim</h2>
+- O item possui `id`;
+- O item possui `validade_dae`;
+- O tipo do arremate é permitido:
+  - `Entrada`
+  - `Taxa Administrativa`
+  - `Arremate`
+  - `Comissao`
+  - `Comissão`
+- O `status_id` é `18`;
+- A data de validade do DAE já venceu;
+- O campo `novo_dae_gerado` é falso.
 
-###
+## Código principal
 
-<p align="left">⚫✨ Criando Bugs desde 2016<br>⚫📚Estou Estudando laravel , Alpine.js, VUE.js, Flutter e React Native <br>⚫👨‍💻 Trabalhando mas sempre em busca de oportunidades</p>
+```js
+const STATUS_PAGO_ID = 17
+const STATUS_AGUARDANDO_ID = 18
 
-###
+function normalizarTexto(valor) {
+  return String(valor ?? "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+}
 
-<h2 align="left">Eu sei e estou melhorando em</h2>
+const tiposPermitemNovoDae = [
+  "entrada",
+  "taxa administrativa",
+  "arremate",
+  "comissao",
+]
 
-###
+const novoDaeJaGerado = computed(() => {
+  return (
+    props.item?.novo_dae_gerado === true ||
+    props.item?.novo_dae_gerado === 1 ||
+    props.item?.novo_dae_gerado === "1" ||
+    props.item?.novo_dae_gerado === "true"
+  )
+})
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" height="40" alt="vue logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg" height="40" alt="alpine logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" height="40" alt="flutter logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/androidstudio/3DDC84" height="40" alt="androidstudio logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/laravel/FF2D20" height="40" alt="laravel logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/php/777BB4" height="40" alt="php logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/python/3776AB" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/mysql/4479A1" height="40" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/postgresql/4169E1" height="40" alt="postgresql logo"  />
-</div>
+const daeVencido = computed(() => {
+  if (!props.item?.validade_dae) return false
 
+  const validade = dayjs(props.item.validade_dae)
 
+  return validade.isValid() && validade.isBefore(dayjs(), "day")
+})
+
+const podeGerarNovoDae = computed(() => {
+  const item = props.item
+
+  if (!item?.id) return false
+  if (!item?.validade_dae) return false
+
+  const tipo = normalizarTexto(item.tipo_arremate)
+  const statusId = Number(item.status_id)
+
+  return (
+    tiposPermitemNovoDae.includes(tipo) &&
+    statusId === STATUS_AGUARDANDO_ID &&
+    daeVencido.value &&
+    !novoDaeJaGerado.value
+  )
+})
+```
+
+## Botão no template
+
+```vue
+<button
+  v-if="podeGerarNovoDae"
+  type="button"
+  class="btn btn-warning btn-sm px-2 py-1 botao-acao"
+  :disabled="gerandoNovoDae"
+  @click="gerarNovoDae"
+>
+  <i
+    v-if="!gerandoNovoDae"
+    class="far fa-file-invoice-dollar small pe-1"
+  ></i>
+
+  <i
+    v-else
+    class="fa-solid fa-spinner fa-spin small pe-1"
+  ></i>
+
+  <span class="small">Novo DAE</span>
+</button>
+```
+
+## Exemplo de item que deve exibir o botão
+
+```json
+{
+  "id": 71,
+  "status_id": 18,
+  "tipo_arremate": "Taxa Administrativa",
+  "validade_dae": "2026-03-07T05:00:00.000000Z",
+  "novo_dae_gerado": false
+}
+```
+
+Neste exemplo, o botão aparece porque:
+
+- O status é `18`;
+- O tipo é `Taxa Administrativa`;
+- O DAE está vencido;
+- Ainda não foi gerado um novo DAE.
