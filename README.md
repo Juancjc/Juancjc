@@ -59,6 +59,14 @@
 
 ---
 
+### 📈 Atividade ao longo do tempo
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Juancjc&theme=tokyo-night&hide_border=true&area=true&custom_title=Commits%20por%20dia&line=64FFDA&point=64FFDA&area_color=64FFDA" alt="Activity graph"/>
+</div>
+
+---
+
 ### 🐍 Minhas contribuições
 
 <div align="center">
